@@ -17,6 +17,7 @@ services:
       - "8080:8080"
     environment:
       - ConnectionStrings__OracleConnection=User Id=system;Password=1234;Data Source=oracle-db:1521/XEPDB1;
+      - ASPNETCORE_URLS=http://+:8080
 
 volumes:
   oracle_data:

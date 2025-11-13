@@ -27,6 +27,14 @@ namespace IdeaTecAPI.Profiles
             // Habilidade
             CreateMap<Habilidade, DTOs.HabilidadeDTO>().ReverseMap();
             CreateMap<DTOs.HabilidadeCreateDTO, Habilidade>();
+
+            // Empresa
+            CreateMap<Empresa, DTOs.EmpresaDTO>().ReverseMap();
+            CreateMap<DTOs.EmpresaCreateDTO, Empresa>();
+
+            // LogAtividade
+            CreateMap<LogAtividade, DTOs.LogAtividadeDTO>().ReverseMap();
+            CreateMap<DTOs.LogAtividadeCreateDTO, LogAtividade>();
         }
     }
 }

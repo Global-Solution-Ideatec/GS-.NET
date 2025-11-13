@@ -18,8 +18,16 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "IdeaTecAPI", Version = "v1" });
 });
 
-// Configure URLs
-builder.WebHost.UseUrls("https://localhost:5001", "http://localhost:5000");
+// Configure URLs: prefer ASPNETCORE_URLS if provided (useful in Docker)
+var aspnetUrls = Environment.GetEnvironmentVariable("ASPNETCORE_URLS");
+if (!string.IsNullOrEmpty(aspnetUrls))
+{
+    builder.WebHost.UseUrls(aspnetUrls);
+}
+else
+{
+    builder.WebHost.UseUrls("https://localhost:5001", "http://localhost:5000");
+}
 
 var app = builder.Build();
 
