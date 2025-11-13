@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VvRg9EJPB4Q=",
+  "dgSpecHash": "NghCD9XrhTU=",
   "success": true,
-  "projectFilePath": "c:\\Users\\cadup\\Documents\\Aulas fiap\\Fiap 2025\\GS\\.Net\\IdeaTecAPI\\IdeaTecAPI.csproj",
+  "projectFilePath": "C:\\Users\\cadup\\Documents\\Aulas fiap\\Fiap 2025\\GS\\.Net\\IdeaTecAPI\\IdeaTecAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cadup\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\cadup\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
