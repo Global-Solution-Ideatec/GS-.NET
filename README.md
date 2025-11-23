@@ -1,5 +1,11 @@
 # IdeaTecAPI - Instruções de execução e testes
 
+Integrantes:
+**Carlos Eduardo Pacheco - RM557323**
+**João Pedro Amorim - RM559213**
+**Pedro Augusto Ladeira - RM558514**
+
+
 Este README descreve como executar o projeto localmente e via Docker, além de exemplos para testar os endpoints (Swagger / cURL).
 
 Pre-requisitos
@@ -69,5 +75,8 @@ Se quiser, eu posso:
 - Gerar um arquivo `.env` para uso com Docker Compose (não commitado) com as variáveis de conexão.
 - Criar testes automatizados básicos (xUnit) para cobrir os controllers.
 
+**Link para video no youtube:**
+_https://youtu.be/j1U0auIki6s_
+
 ---
-Arquivo gerado automaticamente em: `README.md`
+
