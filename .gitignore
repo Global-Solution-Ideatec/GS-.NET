@@ -1,0 +1,16 @@
+# Ignore environment file with secrets
+.env
+
+# Visual Studio / build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# JetBrains Rider
+.idea/
+
+# VS Code
+.vscode/

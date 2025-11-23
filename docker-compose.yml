@@ -3,7 +3,7 @@ services:
   oracle-db:
     image: gvenzl/oracle-xe
     environment:
-      - ORACLE_PASSWORD=1234
+      - ORACLE_PASSWORD=${ORACLE_PASSWORD}
     ports:
       - "1521:1521"
     volumes:
@@ -15,9 +15,12 @@ services:
       - oracle-db
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     environment:
-      - ConnectionStrings__OracleConnection=User Id=system;Password=1234;Data Source=oracle-db:1521/XEPDB1;
-      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__OracleConnection=${CONNECTION_STRING}
+      - ApiKey=${API_KEY}
+      - ASPNETCORE_URLS=${ASPNETCORE_URLS}
 
 volumes:
   oracle_data:

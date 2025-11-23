@@ -45,7 +45,26 @@ docker ps
 Observações sobre connection strings
 - `appsettings.json` está configurado para o Oracle da FIAP com `SID=ord` (host `oracle.fiap.com.br`).
 - O `docker-compose.yml` usa uma connection string diferente para o Oracle XE do container (`Data Source=oracle-db:1521/XEPDB1`) — isso é intencional para testes locais.
-- Evite commitar credenciais reais; prefira variáveis de ambiente ou secrets.
+
+API Key (exemplo)
+- A API suporta um header `X-API-KEY` para autenticação simples. Um valor de exemplo está configurado no `appsettings.json` como:
+
+Uso de `.env` (recomendado)
+- Copie o arquivo de exemplo para criar seu `.env` local:
+
+```powershell
+cp .env.example .env
+# No PowerShell use: Copy-Item .env.example .env
+```
+
+- Abra `.env` e ajuste `CONNECTION_STRING`, `API_KEY` e `ORACLE_PASSWORD` conforme seu ambiente.
+- Ao executar `docker-compose up --build`, o `docker-compose` irá carregar automaticamente as variáveis do `.env` e a API usará `ApiKey` a partir dessas variáveis.
+- **Não** comite o arquivo `.env` no repositório (adicione ao `.gitignore` se necessário).
+```
+SAMPLE_API_KEY_12345
+```
+
+- Para usar no Swagger UI: clique em **Authorize**, insira o valor da chave no campo `X-API-KEY` e confirme. O Swagger enviará o header automaticamente nas requisições.
 
 Endpoints e testes rápidos (exemplos cURL)
 
@@ -66,14 +85,6 @@ Controllers criados/validados
 - `TarefasController` — já existente, implementa GET/POST/PUT/DELETE usando DTOs.
 - `CheckinsController`, `RecomendacoesController`, `HabilidadesController` — já existentes e corretos.
 - `EmpresasController` e `LogAtividadesController` — adicionados neste commit, implementam CRUD e usam DTOs + AutoMapper.
-
-Notas finais
-- `Program.cs` foi ajustado para respeitar `ASPNETCORE_URLS` (útil em container). O fallback original para `localhost:5000/5001` foi mantido.
-- `MappingProfile` foi atualizado com mapeamentos para `Empresa` e `LogAtividade`.
-
-Se quiser, eu posso:
-- Gerar um arquivo `.env` para uso com Docker Compose (não commitado) com as variáveis de conexão.
-- Criar testes automatizados básicos (xUnit) para cobrir os controllers.
 
 **Link para video no youtube:**
 _https://youtu.be/j1U0auIki6s_
